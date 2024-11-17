@@ -67,10 +67,7 @@ function App() {
 
         <footer className="footer">
           <div className="footer-info">
-            <div className="footer-section">
-              <h4>Horario de Atención</h4>
-              <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-            </div>
+          
             <div className="footer-section">
               <h4>Teléfono</h4>
               <p>+50234950048</p>
