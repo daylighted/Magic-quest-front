@@ -1,0 +1,106 @@
+.horarios-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.horario-hoy-tarjeta {
+  display: inline-block;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.horario-hoy-tarjeta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.horario-hoy-tarjeta p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.imagen-torneo-hoy {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.horarios-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.horarios-table th,
+.horarios-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.horarios-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.horarios-imagen {
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Resaltar el día de hoy */
+.hoy {
+  background-color: #c2ebaa; 
+  font-weight: bold;
+  color: white;
+}
+
+/* Estilos para la versión móvil */
+@media (max-width: 768px) {
+  .horario-hoy-tarjeta {
+    padding: 10px 15px;
+  }
+
+  .horario-hoy-tarjeta h2 {
+    font-size: 1.5rem;
+  }
+
+  .horario-hoy-tarjeta p {
+    font-size: 0.9rem;
+  }
+
+  .imagen-torneo-hoy {
+    max-width: 80px;
+  }
+
+  .horarios-imagen {
+    max-width: 60px;
+  }
+
+  .horarios-table th,
+  .horarios-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .horarios-table th {
+    font-size: 1rem;
+  }
+
+  /* Ocultar la tabla en dispositivos móviles */
+  .horarios-table {
+    display: none; /* Ocultamos la tabla completa en pantallas pequeñas */
+  }
+
+  /* Mostrar solo la tarjeta "Hoy" en dispositivos móviles */
+  .horario-hoy-tarjeta {
+    display: block; /* Aseguramos que la tarjeta de hoy esté visible */
+    margin: 20px auto;
+  }
+}

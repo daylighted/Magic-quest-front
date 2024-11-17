@@ -1,37 +1,99 @@
-.App {
-  text-align: center;
-  padding: 20px;
+/* App.css */
+
+/* Estilos generales */
+body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background-color: white;
+  align-items: center;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+}
+
+h1 {
+  margin-left: 10px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+button {
   padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width: 100%;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
-.App-header .logo {
-  position: absolute;
-  left: 10px;        
-  width: 110px;       
-  height: auto;      
+button:hover {
+  background-color: #ff5733;
 }
 
-.App-header h1 {
-  flex-grow: 1;
+#login-button-desktop {
+  display: block;
+}
+
+#mobile-menu-toggle {
+  display: none;
+}
+
+/* Sección de Misión y Visión */
+.mission-vision {
+  padding: 20px;
+  background-color: #f4f4f4;
   text-align: center;
-  margin: 0;
 }
 
-.mission-vision, .brands {
+.mission-vision h2 {
+  margin-bottom: 10px;
+}
+
+/* Sección de Mapa y Ubicación */
+.location {
+  padding: 20px;
+  background-color: #e8e8e8;
+  /* Añadido para asegurarse de que el mapa ocupe el espacio adecuado */
+  flex: 1;
+}
+
+.location-info {
   margin: 20px 0;
+}
+
+.location-info h2 {
+  font-size: 1.5em;
+}
+
+/* Asegúrate de que el mapa ocupe un área visible */
+#map {
+  width: 100%;
+  height: 400px; /* Puedes ajustar la altura del mapa */
+}
+
+/* Sección de Marcas Asociadas */
+.brands {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
 }
 
 .brand-logos img {
@@ -39,143 +101,175 @@
   margin: 10px;
 }
 
-.login-button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  margin-right: 20px;
-}
-
-.login-button:hover {
-  background-color: gray;
-}
-
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.whatsapp-button img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.App {
-  text-align: center;
+/* Footer */
+.footer {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-header {
+.footer-info {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  justify-content: space-between;
   width: 100%;
 }
 
-.App-header .logo {
-  position: absolute;
-  left: 10px;
-  width: 110px;
-  height: auto;
+.footer-section {
+  width: 30%;
 }
 
-.App-header h1 {
-  flex-grow: 1;
-  text-align: center;
-  margin: 0;
+.footer-section h4 {
+  margin-bottom: 10px;
 }
 
-.login-button {
-  background-color: black;
+.footer-section p {
+  margin: 5px 0;
+}
+
+.footer-section a {
   color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  margin-right: 20px;
+  margin: 5px;
 }
 
-.login-button:hover {
-  background-color: gray;
+.footer-section a:hover {
+  text-decoration: underline;
 }
 
+/* Estilos del botón de WhatsApp */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  z-index: 1000;
+  background-color: #25d366;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px; /* Ajuste del tamaño */
+  height: 40px; /* Ajuste del tamaño */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  z-index: 100;
 }
 
-.whatsapp-button img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+.whatsapp-button svg {
+  width: 40px; /* Asegura que el ícono se ajuste al tamaño */
+  height: 40px; /* Asegura que el ícono se ajuste al tamaño */
+}
+
+
+/* Estilos del menú móvil */
+@media (max-width: 768px) {
+  #login-button-desktop {
+    display: none; /* Ocultar en móviles */
+  }
+
+  #mobile-menu-toggle {
+    display: block; /* Mostrar el botón de menú en móviles */
+    font-size: 2em;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-menu-link {
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-menu-link:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Estilo del menú móvil cuando se muestra */
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* Mostrar el menú móvil si está activo */
+.mobile-menu.active {
+  display: flex;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  background-color: #ff5733;
+}
+
+/* Contenedor del mapa y la información */
+.map-location-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: flex-start; /* Alinea elementos al inicio del eje vertical */
+  margin: 20px 0;
+  gap: 20px; /* Espacio entre el mapa y la información */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten si el espacio es pequeño */
+}
+
+.map-container {
+  width: 50%; /* Ocupa el 50% del ancho total */
+  height: 400px; /* Ajusta según tus necesidades */
+  max-width: 500px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.location-info {
+  width: 40%; /* Ocupa el 40% del ancho total */
+  max-width: 400px;
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
 @media (max-width: 768px) {
-  .App-header {
-    flex-direction: column; 
-    padding: 10px;
+  .map-location-container {
+    flex-direction: column; /* Cambia la disposición a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos en dispositivos móviles */
   }
 
-  .App-header .logo {
-    position: static; 
-    width: 80px; 
-    margin-bottom: 10px; 
-  }
-
-  .App-header h1 {
-    font-size: 1.5rem; 
-    margin: 0;
-  }
-
-  .login-button {
-    margin-top: 10px; 
-    margin-right: 0;  
-  }
-
-  .whatsapp-button {
-    width: 45px; 
-    height: 45px;
-  }
-}
-
-@media (max-width: 480px) {
-  .App-header .logo {
-    width: 70px; 
-  }
-
-  .App-header h1 {
-    font-size: 1.25rem; 
-  }
-
-  .login-button {
-    padding: 6px 12px; 
-  }
-
-  .whatsapp-button {
-    width: 40px; 
-    height: 40px;
+  .map-container,
+  .location-info {
+    width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    max-width: 100%; /* Asegura que el ancho no se exceda */
   }
 }
