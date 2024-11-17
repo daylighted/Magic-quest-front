@@ -47,7 +47,8 @@ node index.js
 
 ## Contacto
 
-Si tienes alguna pregunta o necesitas soporte, no dudes en ponerte en contacto con nosotros a través de WhatsApp: [whatsapp link](https://wa.me/+50251206885).
+ErTavo
+DayLighted
 
 ---
 
