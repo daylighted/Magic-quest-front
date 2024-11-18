@@ -115,17 +115,19 @@ button:hover {
   justify-content: space-between;
   width: 100%;
 }
-
+/*Se agrega flex-start para que alinie las mierdas con los demas objetos*/
 .footer-section {
   width: 30%;
+  align-content: flex-start;
 }
 
 .footer-section h4 {
   margin-bottom: 10px;
 }
-
+/*Quiero creer que habia un 0 despues del margen como dedazo xq se cagaba en todo y por eso
+se pegaba bien feo*/
 .footer-section p {
-  margin: 5px 0;
+  margin: 5px;
 }
 
 .footer-section a {
@@ -136,7 +138,19 @@ button:hover {
 .footer-section a:hover {
   text-decoration: underline;
 }
+/*Reglas para pantallas de telefono que solo se aplican si se ve 
+en dispositivo movil*/
+@media screen and (max-width: 992px) {
+  .footer-section {
+    width: 50%;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .footer-section {
+    width: 100%;
+  }
+}
 /* Estilos del botón de WhatsApp */
 .whatsapp-button {
   position: fixed;

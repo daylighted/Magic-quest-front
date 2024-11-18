@@ -78,16 +78,16 @@ function App() {
               <h4>Redes Sociales</h4>
               <p>Síguenos en nuestras redes sociales:</p>
               <a href="https://www.facebook.com/Questcards/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={30} color="blue" />
+                <FaFacebook size={25} color="blue" />
               </a>
               <a href="https://wa.me/+50234950048" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp size={30} color="green" />
+                <FaWhatsapp size={25} color="green" />
               </a>
               <a href="https://www.instagram.com/questoris502" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={30} color="#E4405F" />
+                <FaInstagram size={25} color="#E4405F" />
               </a>
               <a href="https://www.tiktok.com/@questoris" target="_blank" rel="noopener noreferrer">
-                <FaTiktok size={30} color="#010101" />
+                <FaTiktok size={25} color="#010101" />
               </a>
             </div>
             <div className="footer-section">
