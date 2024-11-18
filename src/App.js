@@ -10,6 +10,8 @@ import HorariosJuego from './components/HorariosJuego';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  /*Estado para controlar si el menu esta abierto o cerrado*/
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,8 +23,10 @@ function App() {
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
+    /*Funcion para alternar visibilidad del menu*/
+    setIsMenuOpen(!isMenuOpen);
   };
-
+  
   return (
     <Router>
       <div className="App">
@@ -33,10 +37,21 @@ function App() {
           {/* Solo mostrar el botón de Iniciar sesión en la versión de escritorio */}
           <button className="login-button" onClick={openModal} id="login-button-desktop">Iniciar Sesión</button>
 
-          {/* Icono de menú hamburguesa para la versión móvil */}
+          
+         {/* Icono de menú hamburguesa para la versión móvil */}
           <button onClick={toggleMobileMenu} id="mobile-menu-toggle">
             ☰
           </button>
+
+{/* Menú desplegable (Pendiente en lo que arreglo esta mierda xq no estoy conforme) */}
+{isMenuOpen && (
+          <div className="dropdown-menu">
+            <ul>
+              <li>Inicio</li>
+              <li>Productos</li>
+            </ul>
+          </div>
+        )}
         </header>
 
         {/* Modal de Iniciar sesión */}

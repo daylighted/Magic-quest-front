@@ -287,3 +287,37 @@ en dispositivo movil*/
     max-width: 100%; /* Asegura que el ancho no se exceda */
   }
 }
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Ajusta según la altura de tu header */
+  right: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px; /* Ancho mínimo para el menú */
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Efecto hover para los elementos */
+.dropdown-menu ul li:hover {
+  background-color: #555;
+  color: #f0f0f0;
+  border-radius: 4px;
+}
