@@ -34,8 +34,8 @@ h1 {
 }
 
 button {
-  padding: 10px 20px;
-  margin-left: 10px;
+  padding: 10px 11px;
+  margin-left: 0px;
   cursor: pointer;
   background-color: #ff6f61;
   color: white;
@@ -187,6 +187,7 @@ en dispositivo movil*/
     background-color: transparent;
     border: none;
     color: white;
+    cursor: pointer;
   }
 
   .mobile-menu {
@@ -226,6 +227,17 @@ en dispositivo movil*/
   }
 }
 
+@media (min-width: 768px) {
+  /* Ocultar botón de menú hamburguesa en escritorio */
+  #mobile-menu-toggle {
+    display: none;
+  }
+
+  /* Ocultar menú lateral en escritorio */
+  .sidebar {
+    display: none;
+  }
+}
 /* Mostrar el menú móvil si está activo */
 .mobile-menu.active {
   display: flex;
@@ -287,37 +299,56 @@ en dispositivo movil*/
     max-width: 100%; /* Asegura que el ancho no se exceda */
   }
 }
-/* Estilos para el menú desplegable */
-.dropdown-menu {
-  position: absolute;
-  top: 50px; /* Ajusta según la altura de tu header */
-  right: 10px;
+/* Estilo del menú lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Inicialmente fuera de la pantalla */
+  width: 250px;
+  height: 100%;
   background-color: #333;
   color: #fff;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  min-width: 150px; /* Ancho mínimo para el menú */
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Transparente por defecto */
 }
 
-.dropdown-menu ul {
+/* Clase 'open' para mostrar el menú lateral */
+.sidebar.open {
+  right: 0; /* Mueve el menú a la vista */
+  visibility: visible; /* Visible cuando está abierto */
+  opacity: 1; /* Opaco cuando está abierto */
+}
+
+/* Botón de cerrar en el menú lateral */
+.close-sidebar {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.dropdown-menu ul li {
-  padding: 12px 20px;
+.sidebar ul li {
+  margin: 15px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.3s;
   font-size: 16px;
-  font-weight: 500;
 }
 
-/* Efecto hover para los elementos */
-.dropdown-menu ul li:hover {
+.sidebar ul li:hover {
   background-color: #555;
-  color: #f0f0f0;
-  border-radius: 4px;
+  padding-left: 10px;
+  border-radius: 5px;
 }

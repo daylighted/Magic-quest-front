@@ -39,19 +39,17 @@ function App() {
 
           
          {/* Icono de menú hamburguesa para la versión móvil */}
-          <button onClick={toggleMobileMenu} id="mobile-menu-toggle">
-            ☰
-          </button>
+          <button onClick={toggleMobileMenu} id="mobile-menu-toggle">☰</button>
 
-{/* Menú desplegable (Pendiente en lo que arreglo esta mierda xq no estoy conforme) */}
-{isMenuOpen && (
-          <div className="dropdown-menu">
-            <ul>
-              <li>Inicio</li>
-              <li>Productos</li>
-            </ul>
-          </div>
-        )}
+
+  {/* Menú lateral */}
+  <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
+        <button onClick={toggleMobileMenu} className="close-sidebar">X</button>
+        <ul>
+          <li>Inicio</li>
+          <li>Productos</li>
+        </ul>
+      </div>
         </header>
 
         {/* Modal de Iniciar sesión */}
