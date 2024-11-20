@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, redirect} from 'react-router-dom';
 import ModalLogin from './modals/ModalLogin';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import MapLocation from './components/MapLocation';
 import Productos from './components/Productos';
 import HorariosJuego from './components/HorariosJuego';
+import Header from './components/Header'; // Importa el nuevo componente
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  /*Estado para controlar si el menu esta abierto o cerrado*/
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,22 +24,41 @@ function App() {
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
+    /*Funcion para alternar visibilidad del menu*/
+    setIsMenuOpen(!isMenuOpen);
   };
-
+  
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <img src={require("./assets/logo.png")} alt="Magic Quest Logo" className="logo" />
+          
+          <Link to="/">
+      <img
+        src={require('./assets/logo.png')}
+        alt="Magic Quest Logo"
+        style={{ cursor: 'pointer', width: '50px', height: 'auto' }} // Establece el tamaño
+      />
+    </Link>
+   
           <h1>Magic Quest</h1>
-
+          <Header/>
           {/* Solo mostrar el botón de Iniciar sesión en la versión de escritorio */}
           <button className="login-button" onClick={openModal} id="login-button-desktop">Iniciar Sesión</button>
 
-          {/* Icono de menú hamburguesa para la versión móvil */}
-          <button onClick={toggleMobileMenu} id="mobile-menu-toggle">
-            ☰
-          </button>
+          
+         {/* Icono de menú hamburguesa para la versión móvil */}
+          <button onClick={toggleMobileMenu} id="mobile-menu-toggle">☰</button>
+
+
+  {/* Menú lateral */}
+  <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
+        <button onClick={toggleMobileMenu} className="close-sidebar">X</button>
+        <ul>
+          <li>Inicio</li>
+          <li>Productos</li>
+        </ul>
+      </div>
         </header>
 
         {/* Modal de Iniciar sesión */}
@@ -55,6 +77,7 @@ function App() {
             }
           />
           <Route path="/productos" element={<Productos />} />
+          <Route path="/" element={<Header />} />
         </Routes>
 
         <section className="horarios-juego">
@@ -78,16 +101,16 @@ function App() {
               <h4>Redes Sociales</h4>
               <p>Síguenos en nuestras redes sociales:</p>
               <a href="https://www.facebook.com/Questcards/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={30} color="blue" />
+                <FaFacebook size={25} color="blue" />
               </a>
               <a href="https://wa.me/+50234950048" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp size={30} color="green" />
+                <FaWhatsapp size={25} color="green" />
               </a>
               <a href="https://www.instagram.com/questoris502" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={30} color="#E4405F" />
+                <FaInstagram size={25} color="#E4405F" />
               </a>
               <a href="https://www.tiktok.com/@questoris" target="_blank" rel="noopener noreferrer">
-                <FaTiktok size={30} color="#010101" />
+                <FaTiktok size={25} color="#010101" />
               </a>
             </div>
             <div className="footer-section">

@@ -34,8 +34,8 @@ h1 {
 }
 
 button {
-  padding: 10px 20px;
-  margin-left: 10px;
+  padding: 10px 11px;
+  margin-left: 0px;
   cursor: pointer;
   background-color: #ff6f61;
   color: white;
@@ -115,17 +115,19 @@ button:hover {
   justify-content: space-between;
   width: 100%;
 }
-
+/*Se agrega flex-start para que alinie las mierdas con los demas objetos*/
 .footer-section {
   width: 30%;
+  align-content: flex-start;
 }
 
 .footer-section h4 {
   margin-bottom: 10px;
 }
-
+/*Quiero creer que habia un 0 despues del margen como dedazo xq se cagaba en todo y por eso
+se pegaba bien feo*/
 .footer-section p {
-  margin: 5px 0;
+  margin: 5px;
 }
 
 .footer-section a {
@@ -136,7 +138,19 @@ button:hover {
 .footer-section a:hover {
   text-decoration: underline;
 }
+/*Reglas para pantallas de telefono que solo se aplican si se ve 
+en dispositivo movil*/
+@media screen and (max-width: 992px) {
+  .footer-section {
+    width: 50%;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .footer-section {
+    width: 100%;
+  }
+}
 /* Estilos del botón de WhatsApp */
 .whatsapp-button {
   position: fixed;
@@ -173,6 +187,7 @@ button:hover {
     background-color: transparent;
     border: none;
     color: white;
+    cursor: pointer;
   }
 
   .mobile-menu {
@@ -212,6 +227,17 @@ button:hover {
   }
 }
 
+@media (min-width: 768px) {
+  /* Ocultar botón de menú hamburguesa en escritorio */
+  #mobile-menu-toggle {
+    display: none;
+  }
+
+  /* Ocultar menú lateral en escritorio */
+  .sidebar {
+    display: none;
+  }
+}
 /* Mostrar el menú móvil si está activo */
 .mobile-menu.active {
   display: flex;
@@ -272,4 +298,57 @@ button:hover {
     width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
     max-width: 100%; /* Asegura que el ancho no se exceda */
   }
+}
+/* Estilo del menú lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Inicialmente fuera de la pantalla */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Transparente por defecto */
+}
+
+/* Clase 'open' para mostrar el menú lateral */
+.sidebar.open {
+  right: 0; /* Mueve el menú a la vista */
+  visibility: visible; /* Visible cuando está abierto */
+  opacity: 1; /* Opaco cuando está abierto */
+}
+
+/* Botón de cerrar en el menú lateral */
+.close-sidebar {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.sidebar ul li:hover {
+  background-color: #555;
+  padding-left: 10px;
+  border-radius: 5px;
 }
