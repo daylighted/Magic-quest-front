@@ -7,6 +7,7 @@ import MapLocation from './components/MapLocation';
 import Productos from './components/Productos';
 import HorariosJuego from './components/HorariosJuego';
 import Header from './components/Header'; // Importa el nuevo componente
+import MobileMenu from './components/MobileMenu';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,10 +57,8 @@ function App() {
   {/* Menú lateral */}
   <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
         <button onClick={toggleMobileMenu} className="close-sidebar">X</button>
-        <ul>
-          <li>Inicio</li>
-          <li>Productos</li>
-        </ul>
+        &nbsp;
+        <MobileMenu/>
       </div>
         </header>
 
