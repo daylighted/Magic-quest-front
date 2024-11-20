@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, redirect} from 'react-router-dom';
 import ModalLogin from './modals/ModalLogin';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import MapLocation from './components/MapLocation';
 import Productos from './components/Productos';
 import HorariosJuego from './components/HorariosJuego';
+import Header from './components/Header'; // Importa el nuevo componente
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,9 +32,17 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <img src={require("./assets/logo.png")} alt="Magic Quest Logo" className="logo" />
+          
+          <Link to="/">
+      <img
+        src={require('./assets/logo.png')}
+        alt="Magic Quest Logo"
+        style={{ cursor: 'pointer', width: '50px', height: 'auto' }} // Establece el tamaño
+      />
+    </Link>
+   
           <h1>Magic Quest</h1>
-
+          <Header/>
           {/* Solo mostrar el botón de Iniciar sesión en la versión de escritorio */}
           <button className="login-button" onClick={openModal} id="login-button-desktop">Iniciar Sesión</button>
 
@@ -68,6 +77,7 @@ function App() {
             }
           />
           <Route path="/productos" element={<Productos />} />
+          <Route path="/" element={<Header />} />
         </Routes>
 
         <section className="horarios-juego">

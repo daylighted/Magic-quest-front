@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Productos.css';
 
+
 function Productos() {
   const [productos, setProductos] = useState([]);
 
@@ -18,6 +19,7 @@ function Productos() {
   }, []);
 
   return (
+    
     <div className="productos-container">
       <h2>Productos</h2>
       <div className="productos-grid">
