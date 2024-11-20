@@ -10,6 +10,7 @@ const Header = () => {
 
   return (
     <header className="App-header">
+        <div className="header-container">
       <h1
         onClick={handleNavigateToProductos}
         style={{ cursor: 'pointer', color: 'white'}}
@@ -17,6 +18,7 @@ const Header = () => {
         Productos
       </h1>
       {/* Otros elementos del header */}
+      </div>
     </header>
   );
 };
