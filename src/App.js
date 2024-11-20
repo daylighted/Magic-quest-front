@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link, redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import ModalLogin from './modals/ModalLogin';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import MapLocation from './components/MapLocation';
@@ -33,7 +33,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           
-          <Link to="/">
+    <Link to="/" className='App-header'>
       <img
         src={require('./assets/logo.png')}
         alt="Magic Quest Logo"
@@ -41,7 +41,9 @@ function App() {
       />
     </Link>
    
-          <h1>Magic Quest</h1>
+          <h1 className='App-header'>Magic Quest</h1>
+          &nbsp;
+          &nbsp; 
           <Header/>
           {/* Solo mostrar el botón de Iniciar sesión en la versión de escritorio */}
           <button className="login-button" onClick={openModal} id="login-button-desktop">Iniciar Sesión</button>
